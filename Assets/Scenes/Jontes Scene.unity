@@ -625,7 +625,7 @@ GameObject:
   - component: {fileID: 2078939359}
   - component: {fileID: 2078939358}
   m_Layer: 0
-  m_Name: Square
+  m_Name: Flask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
