@@ -5,46 +5,46 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class CookieGameScript : MonoBehaviour
 {
-    [SerializeField] int cookieCount = 0;
-    [SerializeField] int CookieAdd = 1;
-    [SerializeField] int CookieAddcost = 1;
+    [SerializeField] int InsanityCount = 0;
+    [SerializeField] int InsanityAdd = 1;
+    [SerializeField] int InsanityAddCost = 1;
 
     public bool EscOpen = false;
 
-    public TMP_Text ShopCookieCost;
-    public TMP_Text CookieText;
-    public TMP_Text CookiePerClick;
+    public TMP_Text ShopInsanityCost;
+    public TMP_Text InsanityText;
+    public TMP_Text InsanityPerClick;
 
 
-    [SerializeField] GameObject NoCookies;
+    [SerializeField] GameObject NoInsanity;
     [SerializeField] GameObject Shop;
     [SerializeField] GameObject ShopButton;
     [SerializeField] GameObject EscMenu;
     void Start()
     {
-        CookieText.text = "Insanity:" + cookieCount;
+        InsanityText.text = "Insanity:" + InsanityCount;
         EscOpen = false;
     }
 
     public void OnCookieClick()
     {
-        //cookieCount++;
+        //InsanityCount++;
 
-        if (CookieAdd > 1)
+        if (InsanityAdd > 1)
         {
-            cookieCount += CookieAdd;
+            InsanityCount += InsanityAdd;
         }
         else
         {
-            cookieCount++;
+            InsanityCount++;
         }
-        CookieText.text = "Insanity:" + cookieCount;
+        InsanityText.text = "Insanity:" + InsanityCount;
     }
     public void Update()
     {
-        CookieText.text = "Insanity:" + cookieCount;
-        ShopCookieCost.text = CookieAddcost + "cookies";
-        CookiePerClick.text = CookieAdd + "Cookies";
+        InsanityText.text = "Insanity:" + InsanityCount;
+        ShopInsanityCost.text = InsanityAddCost + "cookies";
+        InsanityPerClick.text = InsanityAdd + "Cookies";
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -78,19 +78,19 @@ public class CookieGameScript : MonoBehaviour
     }
     public IEnumerator BuyButton()
     {
-        if(cookieCount >= CookieAddcost)
+        if(InsanityCount >= InsanityAddCost)
         {
           
-            cookieCount -= CookieAddcost;
-            CookieAddcost++;
-            CookieAdd++;
+            InsanityCount -= InsanityAddCost;
+            InsanityAddCost++;
+            InsanityAdd++;
         
         }
     else
         {
-         NoCookies.SetActive(true);
+         NoInsanity.SetActive(true);
             yield return new WaitForSeconds(1);
-            NoCookies.SetActive(false);
+            NoInsanity.SetActive(false);
         }
 
     }
