@@ -1403,7 +1403,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: More Cookie per click
+  m_text: More insanity per click
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2853,7 +2853,7 @@ MonoBehaviour:
   InsanityAdd: 1
   InsanityAddCost: 1
   EscOpen: 0
-  ShopInsanityCost: {fileID: 0}
+  ShopInsanityCost: {fileID: 1008032887}
   InsanityText: {fileID: 1464058704}
   InsanityPerClick: {fileID: 835223220}
   NoInsanity: {fileID: 287455169}
