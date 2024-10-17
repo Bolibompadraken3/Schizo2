@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AutoclickerUpgrade : MonoBehaviour
 {
-
+    //Adonai Österberg
     [SerializeField] bool canClick = false;
     [SerializeField] int minPoints = 1;
     [SerializeField] int maxPoints = 3;
@@ -30,7 +30,7 @@ public class AutoclickerUpgrade : MonoBehaviour
         canClick = true;
         while (canClick)
         {
-            mySaveData.insanityPoints += Random.Range(minPoints * mySaveData.clickerUpgradeLevel, maxPoints * mySaveData.clickerUpgradeLevel); ;
+            mySaveData.insanityPoints += Random.Range(minPoints * mySaveData.clickerUpgradeLevel * (1 + (mySaveData.autoClickerUpgrade / 2)), maxPoints * mySaveData.clickerUpgradeLevel) * (1 + (mySaveData.autoClickerUpgrade / 2)); ;
             yield return wait;
         }
 
