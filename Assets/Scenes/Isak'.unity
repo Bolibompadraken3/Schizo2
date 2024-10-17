@@ -563,7 +563,7 @@ GameObject:
   - component: {fileID: 287173145}
   - component: {fileID: 287173144}
   m_Layer: 5
-  m_Name: Cookie
+  m_Name: Bottle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1871,7 +1871,7 @@ GameObject:
   - component: {fileID: 835223221}
   - component: {fileID: 835223220}
   m_Layer: 5
-  m_Name: CookiePerClick
+  m_Name: InsanityPerClick
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1916,7 +1916,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Cookie
+  m_text: 'Insanity
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2584,7 +2586,7 @@ GameObject:
   - component: {fileID: 1464058705}
   - component: {fileID: 1464058704}
   m_Layer: 5
-  m_Name: Cookie text
+  m_Name: Insanity Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2847,14 +2849,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e86c88bac976b74892d623a14832ab1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cookieCount: 1
-  CookieAdd: 1
-  CookieAddcost: 1
+  InsanityCount: 0
+  InsanityAdd: 1
+  InsanityAddCost: 1
   EscOpen: 0
-  ShopCookieCost: {fileID: 1008032887}
-  CookieText: {fileID: 1464058704}
-  CookiePerClick: {fileID: 835223220}
-  NoCookies: {fileID: 287455169}
+  ShopInsanityCost: {fileID: 0}
+  InsanityText: {fileID: 1464058704}
+  InsanityPerClick: {fileID: 835223220}
+  NoInsanity: {fileID: 287455169}
   Shop: {fileID: 240885928}
   ShopButton: {fileID: 1450130310}
   EscMenu: {fileID: 949602344}

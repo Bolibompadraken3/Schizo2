@@ -254,8 +254,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -415, y: 183}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 9.375, y: 182.4115}
+  m_SizeDelta: {x: 1048.8, y: 48.823}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &752216610
 MonoBehaviour:
@@ -624,6 +624,7 @@ GameObject:
   - component: {fileID: 2078939360}
   - component: {fileID: 2078939359}
   - component: {fileID: 2078939358}
+  - component: {fileID: 2078939361}
   m_Layer: 0
   m_Name: Flask
   m_TagString: Untagged
@@ -716,6 +717,19 @@ Transform:
   - {fileID: 1091943701}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2078939361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2078939357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 416c8cf5bb45afb46a2cd00dad7e445b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scaleSpeed: 40
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
