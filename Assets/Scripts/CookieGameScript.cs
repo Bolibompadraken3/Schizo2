@@ -101,6 +101,6 @@ public class CookieGameScript : MonoBehaviour
 
     public void MainMenu()
     {
-        SceneManager.LoadScene("Main menu");
+        SceneManager.LoadScene("Shop");
     }
 }
