@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36976a7a13529e842bd5594324436eb9, type: 3}
   m_Name: SaveData
   m_EditorClassIdentifier: 
-  insanityPoints: 0
+  insanityPoints: 2147483647
   clickerUpgradeLevel: 1
+  autoClickerUpgrade: 0
   autoClicker: 1
