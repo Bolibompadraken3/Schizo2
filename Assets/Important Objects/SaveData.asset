@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: SaveData
   m_EditorClassIdentifier: 
   insanityPoints: 0
-  clickerUpgradeLevel: 0
-  autoClicker: 0
+  clickerUpgradeLevel: 1
+  autoClicker: 1
