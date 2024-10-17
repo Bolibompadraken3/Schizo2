@@ -1,87 +1,46 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class BounceScript : MonoBehaviour
+public class ButtonClickEffect : MonoBehaviour
 {
-    // Original scale of the object
+    public Button button; // Reference to the button
+    public GameObject targetObject; // The object to scale
+
     private Vector3 originalScale;
-
-    // Target scales
-    private Vector3 smallerScale;
-    private Vector3 largerScale;
-
-    // Speed of the scaling
-    public float scaleSpeed = 2f;
-
-    // State tracking for scaling phases
-    private enum ScaleState { None, Shrinking, Growing, Returning }
-    private ScaleState currentScaleState = ScaleState.None;
-
-    // Time tracker
-    private float scaleTime = 0f;
 
     void Start()
     {
-        // Save the original scale of the object
-        originalScale = transform.localScale;
-
-        // Calculate target scales
-        smallerScale = originalScale * 0.95f;  // 10% smaller
-        largerScale = originalScale * 1.1f;   // 20% larger
+        originalScale = targetObject.transform.localScale;
+        button.onClick.AddListener(() => StartCoroutine(ScaleObject()));
     }
 
-    void Update()
+    IEnumerator ScaleObject()
     {
-        // Check for mouse click
-        if (Input.GetMouseButtonDown(0) && currentScaleState == ScaleState.None)
-        {
-            // Start shrinking
-            currentScaleState = ScaleState.Shrinking;
-            scaleTime = 0f;  // Reset time tracker
-        }
+        // Shrink by 5%
+        Vector3 smallerScale = originalScale * 0.95f;
+        yield return ScaleOverTime(targetObject, smallerScale, 0.02f);
 
-        // Handle the scaling animation
-        HandleScaling();
+        // Enlarge by 10%
+        Vector3 largerScale = originalScale * 1.10f;
+        yield return ScaleOverTime(targetObject, largerScale, 0.02f);
+
+        // Return to the original scale
+        yield return ScaleOverTime(targetObject, originalScale, 0.02f);
     }
 
-    void HandleScaling()
+    IEnumerator ScaleOverTime(GameObject obj, Vector3 targetScale, float duration)
     {
-        if (currentScaleState == ScaleState.Shrinking)
-        {
-            // Smoothly shrink the object
-            scaleTime += Time.deltaTime * scaleSpeed;
-            transform.localScale = Vector3.Lerp(originalScale, smallerScale, scaleTime);
+        Vector3 currentScale = obj.transform.localScale;
+        float time = 0;
 
-            if (scaleTime >= 1f)
-            {
-                // Transition to the growing phase
-                currentScaleState = ScaleState.Growing;
-                scaleTime = 0f;
-            }
-        }
-        else if (currentScaleState == ScaleState.Growing)
+        while (time < duration)
         {
-            // Smoothly grow the object
-            scaleTime += Time.deltaTime * scaleSpeed;
-            transform.localScale = Vector3.Lerp(smallerScale, largerScale, scaleTime);
-
-            if (scaleTime >= 1f)
-            {
-                // Transition to the returning phase
-                currentScaleState = ScaleState.Returning;
-                scaleTime = 0f;
-            }
+            obj.transform.localScale = Vector3.Lerp(currentScale, targetScale, time / duration);
+            time += Time.deltaTime;
+            yield return null;
         }
-        else if (currentScaleState == ScaleState.Returning)
-        {
-            // Smoothly return to the original size
-            scaleTime += Time.deltaTime * scaleSpeed;
-            transform.localScale = Vector3.Lerp(largerScale, originalScale, scaleTime);
 
-            if (scaleTime >= 1f)
-            {
-                // End the scaling process
-                currentScaleState = ScaleState.None;
-            }
-        }
+        obj.transform.localScale = targetScale; // Ensure the target scale is reached
     }
 }
