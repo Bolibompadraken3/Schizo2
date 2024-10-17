@@ -43,8 +43,8 @@ public class CookieGameScript : MonoBehaviour
     public void Update()
     {
         InsanityText.text = "Insanity:" + InsanityCount;
-        ShopInsanityCost.text = InsanityAddCost + "cookies";
-        InsanityPerClick.text = InsanityAdd + "Cookies";
+        ShopInsanityCost.text = InsanityAddCost + "Insanity";
+        InsanityPerClick.text = InsanityAdd + "Insanity";
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
