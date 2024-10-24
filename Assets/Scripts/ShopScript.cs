@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ShopScript : MonoBehaviour
 {
@@ -69,6 +70,13 @@ public class ShopScript : MonoBehaviour
                             return;
                         }
                         mySaveData.autoClicker = true;
+                        break;
+                    }
+
+                //Return
+                case 2:
+                    {
+                        SceneManager.LoadScene("Isak'");
                         break;
                     }
             }
