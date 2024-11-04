@@ -83,7 +83,7 @@ public class ShopScript : MonoBehaviour
                 //Return
                 case 2:
                     {
-                        SceneManager.LoadScene("SchizoClicker");
+                        SceneManager.LoadScene("Isak'");
                         break;
                     }
             }
