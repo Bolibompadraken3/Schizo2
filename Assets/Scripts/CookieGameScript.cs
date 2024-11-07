@@ -14,6 +14,7 @@ public class CookieGameScript : MonoBehaviour
     public TMP_Text ShopInsanityCost;
     public TMP_Text InsanityText;
     public TMP_Text InsanityPerClick;
+    public SaveData myData;
 
 
     [SerializeField] GameObject NoInsanity;
@@ -22,7 +23,7 @@ public class CookieGameScript : MonoBehaviour
     [SerializeField] GameObject EscMenu;
     void Start()
     {
-        InsanityText.text = "Insanity:" + InsanityCount;
+        InsanityText.text = "Insanity:" + myData.insanityPoints;
         EscOpen = false;
     }
 
@@ -32,19 +33,20 @@ public class CookieGameScript : MonoBehaviour
 
         if (InsanityAdd > 1)
         {
-            InsanityCount += InsanityAdd;
+            myData.insanityPoints += InsanityAdd;
         }
         else
         {
             InsanityCount++;
         }
-        InsanityText.text = "Insanity:" + InsanityCount;
+        InsanityText.text = "Insanity:" + myData.insanityPoints;
     }
     public void Update()
     {
         InsanityText.text = "Insanity:" + InsanityCount;
         ShopInsanityCost.text = InsanityAddCost + "Insanity";
         InsanityPerClick.text = InsanityAdd + "Insanity";
+        InsanityAdd = InsanityAdd * myData.clickerUpgradeLevel;
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
