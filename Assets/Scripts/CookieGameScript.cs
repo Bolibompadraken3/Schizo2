@@ -24,6 +24,7 @@ public class CookieGameScript : MonoBehaviour
     void Start()
     {
         InsanityText.text = "Insanity:" + myData.insanityPoints;
+        InsanityAdd = 1 * (myData.clickerUpgradeLevel + 1);
         EscOpen = false;
     }
 
@@ -37,16 +38,16 @@ public class CookieGameScript : MonoBehaviour
         }
         else
         {
+            myData.insanityPoints += InsanityAdd;
             InsanityCount++;
         }
         InsanityText.text = "Insanity:" + myData.insanityPoints;
     }
     public void Update()
     {
-        InsanityText.text = "Insanity:" + InsanityCount;
+        InsanityText.text = "Insanity:" + myData.insanityPoints;
         ShopInsanityCost.text = InsanityAddCost + "Insanity";
         InsanityPerClick.text = InsanityAdd + "Insanity";
-        InsanityAdd = InsanityAdd * myData.clickerUpgradeLevel;
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {

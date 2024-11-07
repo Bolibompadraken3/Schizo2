@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Shop.unity
     guid: 41801fd29e20aa943975b2df49a7f153
+  - enabled: 1
+    path: Assets/Scenes/Isak'.unity
+    guid: c9db78f35b6a81048aebb4e5f3775570
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

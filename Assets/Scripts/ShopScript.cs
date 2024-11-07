@@ -25,11 +25,11 @@ public class ShopScript : MonoBehaviour
                 {
                     if (mySaveData.clickerUpgradeLevel <= 10)
                     {
-                        price = 10 * mySaveData.clickerUpgradeLevel * 8;
+                        price = 10 * (mySaveData.clickerUpgradeLevel + 1);
                     }
                     else
                     {
-                        price = 10 * mySaveData.clickerUpgradeLevel * (mySaveData.clickerUpgradeLevel/10);
+                        price = 10 * mySaveData.clickerUpgradeLevel * (1 + mySaveData.clickerUpgradeLevel/10);
                     }
                     priceText.text = price.ToString();
                     break;
