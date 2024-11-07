@@ -30,7 +30,7 @@ public class AutoclickerUpgrade : MonoBehaviour
         canClick = true;
         while (canClick)
         {
-            mySaveData.insanityPoints += Random.Range(minPoints * mySaveData.clickerUpgradeLevel * (1 + (mySaveData.autoClickerUpgrade / 2)), maxPoints * mySaveData.clickerUpgradeLevel) * (1 + (mySaveData.autoClickerUpgrade / 2));
+            mySaveData.insanityPoints += Random.Range(minPoints * (mySaveData.clickerUpgradeLevel + 1) * (1 + (mySaveData.autoClickerUpgrade / 2)), maxPoints * (mySaveData.clickerUpgradeLevel + 1) * (1 + (mySaveData.autoClickerUpgrade / 2)));
             yield return wait;
         }
 
