@@ -31,16 +31,23 @@ public class ShopScript : MonoBehaviour
                     {
                         price = 10 * mySaveData.clickerUpgradeLevel * (mySaveData.clickerUpgradeLevel/10);
                     }
+                    priceText.text = price.ToString();
                     break;
                 }
             //Autoclicker
             case 1:
                 {
                     price = 100 * (1 + mySaveData.autoClickerUpgrade * 5);
+                    priceText.text = price.ToString();
+                    break;
+                }
+
+            case 2:
+                {
+                    priceText.text = "FREE!";
                     break;
                 }
         }
-        priceText.text = price.ToString();
     }
 
 
